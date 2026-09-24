@@ -1,3 +1,12 @@
+"""What a transaction looks like once it has been read out of a document.
+
+**This is a starting point, not a specification.** Change it, split it, rename it — but keep two
+properties, because the grading leans on them:
+
+1. Every field traces back to a document (`doc_ids`).
+2. A field the document does not state is `None`, never a guess and never zero.
+"""
+
 from __future__ import annotations
 
 from dataclasses import dataclass, field
