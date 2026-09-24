@@ -44,8 +44,8 @@ def _is_project_development_value(row: dict) -> bool:
 
 
 def _consideration_crore_equivalent(row: dict) -> float | None:
-    # Rule 8: If the number is project development value rather than purchase consideration,
-    # do not rank it as purchase consideration.
+    # if the number is project development value rather than purchase consideration
+    # do not rank it as purchase consideration
     if _is_project_development_value(row):
         return None
 
@@ -61,13 +61,12 @@ def _consideration_crore_equivalent(row: dict) -> float | None:
     curr = (row.get("consideration_currency") or "INR").upper().strip()
     written = (row.get("consideration_as_written") or "").lower().strip()
 
-    # Rule 2:
     # crore -> amount
     # lakh -> amount / 100
     # absolute INR -> amount / 10,000,000
     # million INR -> amount / 10
     if "million" in unit or "million" in written:
-        # e.g. FIL-018: 172.05 million INR -> 17.205 Cr
+        # ex. FIL-018 : 172.05 million INR -> 17.205 Cr
         return amt / 10.0
     elif unit == "crore" or "crore" in written or "cr" in written:
         return amt
