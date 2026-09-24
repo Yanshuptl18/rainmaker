@@ -1,3 +1,10 @@
+"""The `screening-graph` command line.
+
+`corpus` works out of the box, so you can check your environment before writing anything. The
+other three commands are yours. Keep them, add to them, or restructure them — but one command
+per stage, and `--help` should tell a stranger how to run the pipeline.
+"""
+
 from __future__ import annotations
 
 import asyncio
