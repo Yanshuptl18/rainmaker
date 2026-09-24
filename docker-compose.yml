@@ -1,0 +1,13 @@
+# FalkorDB: the graph database behind Graphiti. One container, no configuration.
+# Browse the graph at http://localhost:3000 once it is running.
+services:
+  falkordb:
+    image: falkordb/falkordb:latest
+    ports:
+      - "6379:6379"
+      - "3000:3000"
+    volumes:
+      - falkordb-data:/data
+
+volumes:
+  falkordb-data:
