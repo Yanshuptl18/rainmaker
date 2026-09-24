@@ -1,3 +1,8 @@
+"""Answering the questions in QUESTIONS.md from the graph. Yours to write.
+
+Each answer carries the `doc_id`s it rests on and a line saying how it was derived.
+"""
+
 from __future__ import annotations
 
 import json
